@@ -4,6 +4,7 @@ import context from '../context/context';
 import PublicRoute from '../utils/PublicRoute';
 import AdoptionPage from '../AdoptionPage/AdoptionPage';
 import LandingPage from '../LandingPage/LandingPage';
+import Header from '../Header/Header';
 const api = new apiServices();
 
 
@@ -48,6 +49,7 @@ export default class Root extends React.Component {
     }
     return (<context.Provider value={contextData}>
             <div id="App">
+              <Header/>
               <PublicRoute exact path="/" Component={LandingPage} />
               <PublicRoute path="/adoption" Component={AdoptionPage}/>
             </div>

@@ -6,13 +6,8 @@ export default class AdoptionPage extends React.Component
     render()
     {
         return(<>
-            <h1>Petful</h1>
-            <button onClick={()=>{
-                this.context.adoptAnimal("dog");
-            }}>Adopt Animal</button>
-            <button onClick={()=>{
-                this.context.addPerson("joe");
-            }}>add person</button>
+            
+
         </>);
     }
 

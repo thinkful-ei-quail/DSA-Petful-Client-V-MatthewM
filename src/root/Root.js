@@ -1,6 +1,8 @@
 import apiServices from '../apiServices/apiServices';
 import React from 'react';
 import context from '../context/context';
+import PublicRoute from '../utils/PublicRoute';
+import AdoptionPage from '../AdoptionPage/AdoptionPage';
 const api = new apiServices();
 
 
@@ -9,17 +11,17 @@ export default class Root extends React.Component {
     people:[],
     pets:[],
   }
-  updateData(stData)
+  updateData = (stData)=>
   {
     this.setState(stData)
   }
-  async addPerson(person)
+  addPerson = async(person)=>
   {
     const people = await api.addPerson(person);
     console.log(people);
     this.setState({people})
   }
-  async adoptAnimal(type)
+  adoptAnimal = async(type)=>
   {
     const stData = await api.Delete(type);
     console.log(stData);
@@ -30,23 +32,22 @@ export default class Root extends React.Component {
     const pets = await api.getPets();
     const people = await api.getPeople();
     this.updateData({pets:pets,people:people})
-    console.log(this.state);
+   //console.log(this.state);
   }
 
   render()
   {
     const contextData = {
+      adoptAnimal:this.adoptAnimal,
+      addPerson:this.addPerson,
+      updateData:this.updateData,
+      people:this.state.people,
+      pets:this.state.pets
             
     }
     return (<context.Provider value={contextData}>
-            <div>
-              <h1>Petful</h1>
-              <button onClick={()=>{
-                this.adoptAnimal("dog");
-              }}>Adopt Animal</button>
-              <button onClick={()=>{
-                this.addPerson("joe");
-              }}>add person</button>
+            <div id="App">
+              <PublicRoute path="/adoption" Component={AdoptionPage}/>
             </div>
           </context.Provider>)
   }

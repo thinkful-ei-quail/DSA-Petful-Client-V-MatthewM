@@ -1,0 +1,25 @@
+.LandingPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 70px;
+  margin: 0;
+}
+
+.imgContainer {
+  justify-content: center;
+  width: 30%;
+}
+
+.LPimg {
+  width: 100%;
+  height: auto;
+  justify-self: center;
+}
+
+.infoContainer {
+  width: 60%;
+}

@@ -1,17 +1,18 @@
 import React from 'react';
+import './LandingPage.css'
 
 export default class LandingPage extends React.Component {
 
   render() {
     return (
-      <>
+      <section className='LandingPage'>
         <div>
-          <h1>Petful</h1>
+          <h1 className='title'>Petful</h1>
         </div>
-        <div>
-          <img src='https://i.pinimg.com/originals/12/05/a8/1205a86aa7226702b62569d0d0bb43fa.jpg' alt='The Petful Homepage' />
+        <div className='imgContainer'>
+          <img className='LPimg' src='https://i.pinimg.com/originals/12/05/a8/1205a86aa7226702b62569d0d0bb43fa.jpg' alt='The Petful Homepage' />
         </div>
-        <div>
+        <div className='infoContainer'>
           <p>Welcome to Petful! At Petful we follow an efficient and safe process to ensure that all pets get adopted.</p>
           <hr />
           <p>
@@ -24,7 +25,7 @@ export default class LandingPage extends React.Component {
         <div>
           <a href="/adoption" ><input type='button' value='Adopt Now' /></a>
         </div>
-      </>
+      </section>
     )
   }
 }

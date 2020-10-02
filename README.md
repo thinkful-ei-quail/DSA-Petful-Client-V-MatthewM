@@ -1,6 +1,18 @@
 # Petful Client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Petful app is an pet adoption system using queue to ensure fairness and to ensure pets get adopted and not left beheind at the adoption agency. Adopters enter a queue to take a turn adopting. Cats and Dogs are both entered in their own queues, from which adopters can adopt a cat, a dog, or both from the front of their respective queues.
+
+## App Links
+
+Live App Link: https://dsa-petful-v-matthewm.vercel.app
+Client Repo: https://github.com/thinkful-ei-quail/DSA-Petful-Client-V-MatthewM
+API Repo: https://github.com/thinkful-ei-quail/DSA-Petful-Server-V-MatthewM
+
+## Created By:
+
+V
+and
+Matthew Macomber
 
 ## Available Scripts
 

@@ -48,7 +48,7 @@ export default class Root extends React.Component {
     }
     return (<context.Provider value={contextData}>
             <div id="App">
-              <PublicRoute path="/" Component={LandingPage} />
+              <PublicRoute exact path="/" Component={LandingPage} />
               <PublicRoute path="/adoption" Component={AdoptionPage}/>
             </div>
           </context.Provider>)

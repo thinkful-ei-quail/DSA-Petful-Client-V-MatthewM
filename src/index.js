@@ -9,6 +9,7 @@ console.log(process.env)
 
 ReactDOM.render(
   <BrowserRouter>
-    <Root />, document.getElementById('root')
+    <Root />
   </BrowserRouter>
+  , document.getElementById('root')
 );

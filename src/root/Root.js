@@ -3,7 +3,7 @@ import React from 'react';
 import context from '../context/context';
 import PublicRoute from '../utils/PublicRoute';
 import AdoptionPage from '../AdoptionPage/AdoptionPage';
-import LandingPage from '../LandingPage/LangingPage';
+import LandingPage from '../LandingPage/LandingPage';
 const api = new apiServices();
 
 

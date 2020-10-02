@@ -13,6 +13,7 @@ export default class LandingPage extends React.Component {
         </div>
         <div>
           <p>Welcome to Petful! At Petful we follow an efficient and safe process to ensure that all pets get adopted.</p>
+          <hr />
           <p>
             The adoption process is simple. Pets are put into an adoption queue when they arrive.
             Adopters place their name at the end of the adoption queue, and get to adopt when their name is at the front.
@@ -21,7 +22,7 @@ export default class LandingPage extends React.Component {
           </p>
         </div>
         <div>
-          <input type='button' value='Adopt Now' />
+          <a href="/adoption" ><input type='button' value='Adopt Now' /></a>
         </div>
       </>
     )

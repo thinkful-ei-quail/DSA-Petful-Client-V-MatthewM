@@ -6,9 +6,6 @@ export default class LandingPage extends React.Component {
   render() {
     return (
       <section className='LandingPage'>
-        <div>
-          <h1 className='title'>Petful</h1>
-        </div>
         <div className='imgContainer'>
           <img className='LPimg' src='https://i.pinimg.com/originals/12/05/a8/1205a86aa7226702b62569d0d0bb43fa.jpg' alt='The Petful Homepage' />
         </div>

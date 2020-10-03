@@ -27,7 +27,11 @@ export default class Root extends React.Component {
   {
     const stData = await api.Delete(type);
     console.log(stData);
-    this.setState(stData)
+    if (stData === 'Aint no average Joes here') {
+      // Error handler?
+    } else {
+      this.setState(stData)
+    }
   }
   async componentDidMount()
   {

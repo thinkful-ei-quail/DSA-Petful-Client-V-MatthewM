@@ -15,7 +15,7 @@ export default class Dogs extends React.Component
                 
                 return(
                 <div style={{opacity:`${(1 - (index/4)) * ((1 - (index/4)) > 0)}`}}>
-                    <img src={imageURL} style={{width:`${400 - index * 25}px`}}></img>
+                    <img src={imageURL} style={{width:`${400 - index * 25}px`}} alt={description}></img>
                     <ol>
                         <li>Name:{name}</li>
                         <li>Age:{age}</li>
@@ -35,7 +35,7 @@ export default class Dogs extends React.Component
                         this.context.adoptAnimal("dog");
     
                     }}>
-                        <img src={imageURL} style={{width:`${400 - index * 5}px`}}></img>
+                        <img src={imageURL} style={{width:`${400 - index * 5}px`}} alt={description}></img>
                         <ol>
                             <li>Name:{name}</li>
                             <li>Age:{age}</li>

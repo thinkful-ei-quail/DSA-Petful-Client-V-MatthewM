@@ -15,8 +15,6 @@ export default class AdoptionPage extends React.Component
                 <AdoptionQueue/>
                 <Dogs/>
             </div>
-            
-
         </>);
     }
 

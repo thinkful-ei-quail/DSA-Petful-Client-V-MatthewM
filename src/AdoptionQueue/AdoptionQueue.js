@@ -18,10 +18,28 @@ export default class AdoptionQueue extends React.Component
         
         return html
     }
+    adoptBothButton = () => {
+        const cats = this.context.pets[0];
+        const dogs = this.context.pets[1];
+        console.log(cats)
+        if ((cats !== undefined && cats.length > 0) && (dogs !== undefined && dogs.length > 0)) {
+            return (
+                <button onClick={(e) => {
+                    e.preventDefault();
+                    this.context.adoptAnimal('both');
+                }}>
+                    Adopt Both
+                </button>
+            )
+        } else {
+            return <></>
+        }
+    }
     render()
     {
         return(<div className="queue">
                 
+                <div><this.adoptBothButton/></div>
                 <h3>Up next.</h3>
                 <ol><this.populate/></ol>
 

@@ -1,0 +1,27 @@
+.petHolder
+{
+    display: flex;
+    justify-content: center;
+    height: 1500px;
+    overflow: hidden;
+}
+
+ol
+{
+    margin:auto;
+    width: 256px;
+    text-align: left;
+}
+.dog,.cat
+{
+    text-align: center;
+    margin-top:5px;
+}
+.queue, .queue ol
+{
+    list-style: decimal;
+    padding: 10px;
+    text-align: center;
+    
+    width: auto;
+}

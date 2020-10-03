@@ -27,7 +27,7 @@ export default class Root extends React.Component {
   {
     const stData = await api.Delete(type);
     console.log(stData);
-    this.setState({stData})
+    this.setState(stData)
   }
   async componentDidMount()
   {
@@ -48,11 +48,11 @@ export default class Root extends React.Component {
             
     }
     return (<context.Provider value={contextData}>
-            <div id="App">
+        
               <Header/>
               <PublicRoute exact path="/" Component={LandingPage} />
               <PublicRoute path="/adoption" Component={AdoptionPage}/>
-            </div>
+        
           </context.Provider>)
   }
   

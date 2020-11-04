@@ -1,16 +1,29 @@
 header
 {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 header form
 {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
 }
 header h1
 {
     margin-right: auto;
     margin-left: 100px;
+}
+
+@media all and (min-width: 450px){
+    header {
+        flex-direction: row;
+    }
+
+    header form {
+        margin-right: 100px;
+        flex-direction: row;
+    }
 }

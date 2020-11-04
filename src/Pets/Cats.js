@@ -35,7 +35,7 @@ export default class Cats extends React.Component
                         this.context.adoptAnimal("cat");
     
                     }}>
-                        <img src={imageURL} style={{width:`${400 - index * 5}px`}} alt={description}></img>
+                        <img src={imageURL} alt={description}></img>
                         <ol>
                             <li>Name:{name}</li>
                             <li>Age:{age}</li>

@@ -1,9 +1,9 @@
 .petHolder
 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    height: 1500px;
-    overflow: hidden;
+    height: auto;
 }
 
 ol
@@ -12,16 +12,53 @@ ol
     width: 256px;
     text-align: left;
 }
-.dog,.cat
+
+.petHolder .cats .cat button img {
+    width: 85%;
+}
+
+.petHolder .dogs .dog button img {
+    width: 85%;
+}
+
+.dogs, .cats {
+}
+
+.dog, .cat
 {
     text-align: center;
     margin-top:5px;
+    object-fit: cover;
 }
-.queue, .queue ol
-{
-    list-style: decimal;
-    padding: 10px;
-    text-align: center;
+
+@media all and (max-width: 450px){
+    .dog, .cat {
+        visibility: hidden;
+        display: none;
+    }
+
+    .dog:first-of-type, .cat:first-of-type {
+        visibility: visible;
+        display: initial;
+    }
+}
+
+@media all and (min-width: 450px) {
+    .petHolder {
+        flex-direction: row;
+        overflow: hidden;
+        height: 1500px;
+    }
+
+    .petHolder .cats .cat button img {
+        width: 400px;
+    }
     
-    width: auto;
+    .petHolder .dogs .dog button img {
+        width: 400px;
+    }
+
+    .dogs, .cats {
+        width: auto;
+    }
 }

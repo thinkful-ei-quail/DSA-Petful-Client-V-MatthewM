@@ -1,0 +1,7 @@
+.queue, .queue ol
+{
+    list-style: decimal;
+    padding: 10px;
+    text-align: center;
+    width: auto;
+}

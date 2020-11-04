@@ -11,8 +11,8 @@ export default class AdoptionPage extends React.Component
     {
         return(<>
             <div className="petHolder">
-                <Cats/>
                 <AdoptionQueue/>
+                <Cats/>
                 <Dogs/>
             </div>
         </>);

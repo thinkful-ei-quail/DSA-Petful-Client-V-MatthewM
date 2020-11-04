@@ -18,3 +18,9 @@
 .infoContainer {
   width: 60%;
 }
+
+@media all and () {
+  .LandingPage {
+    
+  }
+}

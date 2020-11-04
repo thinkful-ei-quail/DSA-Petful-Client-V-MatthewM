@@ -13,8 +13,8 @@ header form
 }
 header h1
 {
-    margin-right: auto;
-    margin-left: 100px;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 @media all and (min-width: 450px){
@@ -25,5 +25,10 @@ header h1
     header form {
         margin-right: 100px;
         flex-direction: row;
+    }
+
+    header h1 {
+        margin-right: auto;
+        margin-left: 100px;
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import context from '../context/context';
+require('./AdoptionQueue.css')
 
 export default class AdoptionQueue extends React.Component
 {
@@ -12,11 +13,11 @@ export default class AdoptionQueue extends React.Component
         {
             for(const person in people)
             {   
-                html.push(<li key={person}>{people[person]}</li>)
+                html.push(<li key={person}>{people[person]}</li>);
             }
         }
         
-        return html
+        return html;
     }
     adoptBothButton = () => {
         const cats = this.context.pets[0];
@@ -36,12 +37,11 @@ export default class AdoptionQueue extends React.Component
     }
     render()
     {
-        return(<div className="queue">
-                
-                <div><this.adoptBothButton/></div>
+        return(
+            <div className="queue">
                 <h3>Up next.</h3>
                 <ol><this.populate/></ol>
-
+                <div><this.adoptBothButton/></div>
             </div>)
     }
 }

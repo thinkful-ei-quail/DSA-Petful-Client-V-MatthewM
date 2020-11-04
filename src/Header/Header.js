@@ -18,7 +18,10 @@ export default class Header extends React.Component
                     input.value = "";
                     this.context.addPerson(person);
 
-                }}><input type="text" id='person'/><button>Add Adopter</button></form>
+                }}>
+                    <input type="text" id='person'/>
+                    <button>Add Adopter</button>
+            </form>
         </header>)
     }
 }

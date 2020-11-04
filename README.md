@@ -4,7 +4,7 @@ The Petful app is an pet adoption system using queue to ensure fairness and to e
 
 ## App Links
 
-Live App Link: https://dsa-petful-v-matthewm.vercel.app<br />
+Live App Link: https://petful-client.matthewmacomber.vercel.app<br />
 Client Repo: https://github.com/thinkful-ei-quail/DSA-Petful-Client-V-MatthewM<br />
 API Repo: https://github.com/thinkful-ei-quail/DSA-Petful-Server-V-MatthewM<br />
 

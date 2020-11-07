@@ -74,9 +74,24 @@ export default class AdoptionQueue extends React.Component
         const dogs = this.context.pets[1];
         if ((cats !== undefined && cats.length > 0) && (dogs !== undefined && dogs.length > 0)) {
             return (
-                <button onClick={(e) => {
+                <button onClick={async(e) => {
                     e.preventDefault();
-                    this.context.adoptAnimal('both');
+                    if(this.context.randomPeople.includes(this.context.people[0]))
+                        {
+                            await this.context.updateData({canAdopt:false});
+                        }
+                        else
+                        {   
+                            await this.context.updateData({canAdopt:true});
+                        }
+                        if(this.context.canAdopt)
+                        {
+                            await this.context.adoptAnimal('both');  
+                        }
+                        else
+                        {
+                            console.log(`Sorry, can't`)
+                        }
                 }}>
                     Adopt Both
                 </button>

@@ -30,9 +30,26 @@ export default class Dogs extends React.Component
             else
             {
                 return(
-                    <button onClick={(e) => {
+                    <button onClick={async (e) => {
                         e.preventDefault();
-                        this.context.adoptAnimal("dog");
+                        if(this.context.randomPeople.includes(this.context.people[0]))
+                        {
+                            await this.context.updateData({canAdopt:false});
+                        }
+                        else
+                        {   
+                            await this.context.updateData({canAdopt:true});
+                        }
+                        if(this.context.canAdopt)
+                        {
+                            await this.context.adoptAnimal("dog");    
+                        }
+                        else
+                        {
+                            console.log(`Sorry, can't`)
+                        }
+                        
+                        
     
                     }}>
                         <img src={imageURL} alt={description}></img>

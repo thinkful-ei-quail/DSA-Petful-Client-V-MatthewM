@@ -12,6 +12,20 @@ export default class Root extends React.Component {
   state = {
     people:[],
     pets:[],
+    //For Adding new random people. Sent to the queue on the back end.
+    randomPeople:[
+      'Laurence Perkins',
+      'Giles Vargas',
+      'Sierra Alford',
+      'Everett Rangel',
+      'Habiba Mosley',
+      'Safah Zuniga',
+      'Leilani Burt',
+      'Shyla Velazquez',
+      'Roza Patel',
+      'Kien Olson' 
+  ],
+    canAdopt:false
   }
   updateData = (stData)=>
   {
@@ -20,13 +34,13 @@ export default class Root extends React.Component {
   addPerson = async(person)=>
   {
     const people = await api.addPerson(person);
-    console.log(people);
+    //console.log(people);
     this.setState({people})
   }
   adoptAnimal = async(type)=>
   {
     const stData = await api.Delete(type);
-    console.log(stData);
+    //console.log(stData);
     if (stData === 'Aint no average Joes here') {
       // Error handler?
     } else {
@@ -48,7 +62,9 @@ export default class Root extends React.Component {
       addPerson:this.addPerson,
       updateData:this.updateData,
       people:this.state.people,
-      pets:this.state.pets
+      pets:this.state.pets,
+      randomPeople:this.state.randomPeople,
+      canAdopt:this.state.canAdopt
             
     }
     return (<context.Provider value={contextData}>

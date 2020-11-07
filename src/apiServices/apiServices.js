@@ -44,7 +44,7 @@ export default class apiServices
     }
     addPerson(person)
     {
-        console.log(person);
+        //console.log(person);
         return new Promise(resolve => {
             fetch(`${config.server_endpoint}people`,{
             method:"POST",

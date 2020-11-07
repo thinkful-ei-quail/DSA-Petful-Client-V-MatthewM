@@ -30,9 +30,25 @@ export default class Cats extends React.Component
             else
             {
                 return(
-                    <button onClick={(e) => {
+                    <button onClick={async (e) => {
                         e.preventDefault();
-                        this.context.adoptAnimal("cat");
+                        
+                        if(this.context.randomPeople.includes(this.context.people[0]))
+                        {
+                            await this.context.updateData({canAdopt:false});
+                        }
+                        else
+                        {   
+                            await this.context.updateData({canAdopt:true});
+                        }
+                        if(this.context.canAdopt)
+                        {
+                            await this.context.adoptAnimal("cat");  
+                        }
+                        else
+                        {
+                            console.log(`Sorry, can't`)
+                        }
     
                     }}>
                         <img src={imageURL} alt={description}></img>

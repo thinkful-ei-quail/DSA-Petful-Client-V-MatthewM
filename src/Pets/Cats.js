@@ -10,7 +10,7 @@ export default class Cats extends React.Component
         if(cat)
         {
             const {age, breed, description, gender, imageURL, name, story} = cat
-            if(index > 0)
+            if(!this.context.canAdopt)
             {
                 
                 return(
@@ -49,6 +49,14 @@ export default class Cats extends React.Component
                         {
                             console.log(`Sorry, can't`)
                         }
+                        if(this.context.randomPeople.includes(this.context.people[0]))
+                        {
+                            await this.context.updateData({canAdopt:false});
+                        }
+                        else
+                        {   
+                            await this.context.updateData({canAdopt:true});
+                        }
     
                     }}>
                         <img src={imageURL} alt={description}></img>
@@ -73,10 +81,7 @@ export default class Cats extends React.Component
         const cats = this.context.pets[0];
         if(cats)
         {
-            for(const cat in cats)
-            {
-                html.push(<div className="cat" key={cat}>{this.Cat(cats[cat],cat)}</div>)
-            }
+            html.push(<div className="cat" key={0}>{this.Cat(cats[0],0)}</div>)
         }
         return html;
     }

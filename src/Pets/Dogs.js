@@ -10,7 +10,7 @@ export default class Dogs extends React.Component
         if(dog)
         {
             const {age, breed, description, gender, imageURL, name, story} = dog
-            if(index > 0)
+            if(!this.context.canAdopt)
             {
                 
                 return(
@@ -48,6 +48,14 @@ export default class Dogs extends React.Component
                         {
                             console.log(`Sorry, can't`)
                         }
+                        if(this.context.randomPeople.includes(this.context.people[0]))
+                        {
+                            await this.context.updateData({canAdopt:false});
+                        }
+                        else
+                        {   
+                            await this.context.updateData({canAdopt:true});
+                        }
                         
                         
     
@@ -74,10 +82,8 @@ export default class Dogs extends React.Component
         const dogs = this.context.pets[1];
         if(dogs)
         {
-            for(const dog in dogs)
-            {
-                html.push(<div className="dog" key={dog}>{this.Dog(dogs[dog],dog)}</div>)
-            }
+            
+            html.push(<div className="dog" key={0}>{this.Dog(dogs[0],0)}</div>)
         }
         return html;
     }

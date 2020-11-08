@@ -10,7 +10,7 @@ API Repo: https://github.com/thinkful-ei-quail/DSA-Petful-Server-V-MatthewM<br /
 
 ## Created By:
 
-V
+Alexis Felts
 and
 Matthew Macomber
 

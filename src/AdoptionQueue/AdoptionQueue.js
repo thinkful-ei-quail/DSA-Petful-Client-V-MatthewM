@@ -69,7 +69,11 @@ export default class AdoptionQueue extends React.Component
         
         return html;
     }
-    adoptBothButton = () => {
+    adoptBothButton = (canAdopt) => {
+        if(!canAdopt)
+        {
+            return <></>;
+        }
         const cats = this.context.pets[0];
         const dogs = this.context.pets[1];
         if ((cats !== undefined && cats.length > 0) && (dogs !== undefined && dogs.length > 0)) {
@@ -92,6 +96,14 @@ export default class AdoptionQueue extends React.Component
                         {
                             console.log(`Sorry, can't`)
                         }
+                        if(this.context.randomPeople.includes(this.context.people[0]))
+                        {
+                            await this.context.updateData({canAdopt:false});
+                        }
+                        else
+                        {   
+                            await this.context.updateData({canAdopt:true});
+                        }
                 }}>
                     Adopt Both
                 </button>
@@ -106,7 +118,7 @@ export default class AdoptionQueue extends React.Component
             <div className="queue">
                 <h3>Up next.</h3>
                 <ol><this.populate/></ol>
-                <div><this.adoptBothButton/></div>
+                <div>{this.adoptBothButton(this.context.canAdopt)}</div>
             </div>)
     }
 }
